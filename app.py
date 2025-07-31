@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.models import load_model
 from tensorflow.keras.losses import BinaryCrossentropy
 
-model = load_model("model.h5", custom_objects={'BinaryCrossentropy': BinaryCrossentropy()})
+model = load_model("model.h5", compile=False)
 
 
 with open('label_encoder_gender.pkl', 'rb') as f:
