@@ -5,7 +5,11 @@ import pickle
 from tensorflow.keras.models import load_model
 
 # Load saved model and preprocessing objects
-model = load_model('model.h5')
+from tensorflow.keras.models import load_model
+from tensorflow.keras.losses import BinaryCrossentropy
+
+model = load_model("model.h5", custom_objects={'BinaryCrossentropy': BinaryCrossentropy()})
+
 
 with open('label_encoder_gender.pkl', 'rb') as f:
     label_encoder_gender = pickle.load(f)
